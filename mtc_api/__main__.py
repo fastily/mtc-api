@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route('/generate', methods=["POST"])
 def generate():
-    return generate_text_multi(titles) if (titles := request.json.get("titles")) else ({"error": "empty or malformed request"}, 400)
+    return generate_text_multi(titles, request.json.get("force", False)) if (titles := request.json.get("titles")) and len(titles) <= 25 else ({"error": "empty, malformed, or overly large request"}, 400)
 
 
 @app.route('/')

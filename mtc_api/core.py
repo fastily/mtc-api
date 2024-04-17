@@ -14,10 +14,13 @@ from pwiki.wparser import WikiTemplate, WParser
 
 log = logging.getLogger(__name__)
 
+_MTC = "Wikipedia:MTC!"
 _USER_AT_PROJECT = "{{{{User at project|{}|w|en}}}}"
 
 WIKI = Wiki()
 COM = Wiki("commons.wikimedia.org")
+BLACKLIST = set(WIKI.links_on_page(f"{_MTC}/Blacklist"))
+WHITELIST = set(WIKI.links_on_page(f"{_MTC}/Whitelist"))
 
 
 def _fuzz_for_param(target_key: str, t: WikiTemplate, default: str = "") -> str:
@@ -142,10 +145,10 @@ def _generate_text(title: str, is_own_work: bool, ii_l: list[ImageInfo]) -> str:
         ii.summary = ii.summary.replace('\n', ' ').replace('  ', ' ') if ii.summary else ''
         desc += f"\n|-\n| {ii.timestamp:%Y-%m-%d %H:%M:%S} || {ii.height} \u00D7 {ii.width} || [[w:User:{ii.user}|{ii.user}]] || ''<nowiki>{ii.summary}</nowiki>''"
 
-    return desc + "\n|}\n\n{{Subst:Unc}}"
+    return desc + "\n|}"
 
 
-def generate_text_multi(titles: list[str]) -> dict:
+def generate_text_multi(titles: list[str], force: bool) -> dict:
     """Generates text for multiple files on enwp at a time.  Output can be used directly as the return json for the web service.
 
     Args:
@@ -155,16 +158,20 @@ def generate_text_multi(titles: list[str]) -> dict:
         dict: The output json
     """
     cat_map = MQuery.categories_on_page(WIKI, titles)
-    # if not force:
-    #     titles = [title for title, cats in cat_map.items() if self.blacklist.isdisjoint(cats) and not self.whitelist.isdisjoint(cats)]  # filter blacklist & whitelist
-    #     titles = [title for title, dupes in MQuery.duplicate_files(self.wiki, titles, False, True).items() if not dupes]  # don't transfer if already transferred
 
-    title_map = _generate_commons_title(titles)
-    image_infos = MQuery.image_info(WIKI, titles)
+    if force:
+        l = titles
+        fails = []
+    else:
+        l = [title for title, cats in cat_map.items() if BLACKLIST.isdisjoint(cats) and not WHITELIST.isdisjoint(cats)]  # filter blacklist & whitelist
+        l = [title for title, dupes in MQuery.duplicate_files(WIKI, l, False, True).items() if not dupes]  # don't transfer if already transferred
+        fails = list(set(titles) - set(l))
+
+    title_map = _generate_commons_title(l)
+    image_infos = MQuery.image_info(WIKI, l)
 
     out = []
-    fails = []
-    for title in titles:
+    for title in l:
         if (desc := _generate_text(title, "Category:Self-published work" in cat_map[title], image_infos[title])) and (com_title := title_map[title]):
             out.append({title: {"com_title": com_title, "desc": desc}})
         else:
