@@ -85,14 +85,11 @@ Takes a list of titles of files on enwp and attempts to generate file descriptio
 ```
 </details>
 
-## Development commands
+## Useful commands
 ```bash
-# start
+# start development server
 python -m mtc_api
-```
 
-## Production commands
-```bash
-# run w/ gunicorn
-gunicorn -w 2 -k uvicorn.workers.UvicornWorker -b "0.0.0.0:8000" mtc_api.__main__:app
+# use gunicorn to run in prod
+gunicorn -w 2 -b "0.0.0.0:8000" mtc_api.__main__:app
 ```
