@@ -36,10 +36,9 @@ Takes a list of titles of files on enwp and attempts to generate file descriptio
     ],
     "generated_text": [
         {
-            "File:DFO dog stare.JPG": {
-                "com_title": "File:DFO dog stare.JPG",
-                "desc": "== {{int:filedesc}} ==\n{{Information\n|description=for use in my user space.\n|date=\n|source=\n|author=\n|permission=\n|other versions=\n}}\n\n== {{int:license-header}} ==\n{{Cc-by-sa-4.0}}\n{{Own}}\n\n== {{Original upload log}} ==\n{{Original file page|en.wikipedia|DFO dog stare.JPG}}\n{| class=\"wikitable\"\n! {{int:filehist-datetime}} !! {{int:filehist-dimensions}} !! {{int:filehist-user}} !! {{int:filehist-comment}}\n|-\n| 2020-11-01 18:04:48 || 4000 × 6000 || [[w:User:Deepfriedokra|Deepfriedokra]] || ''<nowiki>{{own work}} for use in my user space.</nowiki>''\n|}"
-            }
+            "com_title": "File:DFO dog stare.JPG",
+            "desc": "== {{int:filedesc}} ==\n{{Information\n|description=for use in my user space.\n|date=\n|source=\n|author=\n|permission=\n|other versions=\n}}\n\n== {{int:license-header}} ==\n{{Cc-by-sa-4.0}}\n{{Own}}\n\n== {{Original upload log}} ==\n{{Original file page|en.wikipedia|DFO dog stare.JPG}}\n{| class=\"wikitable\"\n! {{int:filehist-datetime}} !! {{int:filehist-dimensions}} !! {{int:filehist-user}} !! {{int:filehist-comment}}\n|-\n| 2020-11-01 18:04:48 || 4000 × 6000 || [[w:User:Deepfriedokra|Deepfriedokra]] || ''<nowiki>{{own work}} for use in my user space.</nowiki>''\n|}",
+            "enwp_title": "File:DFO dog stare.JPG"
         }
     ]
 }
@@ -69,16 +68,14 @@ Takes a list of titles of files on enwp and attempts to generate file descriptio
     "fails": [],
     "generated_text": [
         {
-            "File:FleetwoodLeyland.jpg": {
-                "com_title": "File:FleetwoodLeyland.jpg",
-                "desc": "== {{int:filedesc}} ==\n{{Information\n|description=Fleetwood-Smith (second from right) has England batsman [[w:Maurice Leyland]] caught at slip by [[w:Arthur Chipperfield]], one of his ten wickets in the fourth Test at [[w:Adelaide Oval]] - from the 1936-37 cricket series between Australia and England.\n|date=c. 1936-7\n|source=\n|author=\n|permission=Image is pre-1955 and therefore in the Public Domain.\n|other versions=\n}}\n\n== {{int:license-header}} ==\n{{PD-URAA|pdsource=yes}}\n{{PD-Australia|1=commons}}\n\n== {{Original upload log}} ==\n{{Original file page|en.wikipedia|FleetwoodLeyland.jpg}}\n{| class=\"wikitable\"\n! {{int:filehist-datetime}} !! {{int:filehist-dimensions}} !! {{int:filehist-user}} !! {{int:filehist-comment}}\n|-\n| 2007-12-17 07:14:40 || 252 × 472 || [[w:User:Phanto282|Phanto282]] || ''<nowiki>Pic fromt the 1936-37 cricket series between Australia and England. Image is pre-1955 and therefore in the Public Domain. {{Template:PD-Australia}}</nowiki>''\n|}"
-            }
+            "com_title": "File:FleetwoodLeyland.jpg",
+            "desc": "== {{int:filedesc}} ==\n{{Information\n|description=Fleetwood-Smith (second from right) has England batsman [[w:Maurice Leyland]] caught at slip by [[w:Arthur Chipperfield]], one of his ten wickets in the fourth Test at [[w:Adelaide Oval]] - from the 1936-37 cricket series between Australia and England.\n|date=c. 1936-7\n|source=\n|author=\n|permission=Image is pre-1955 and therefore in the Public Domain.\n|other versions=\n}}\n\n== {{int:license-header}} ==\n{{PD-URAA|pdsource=yes}}\n{{PD-Australia|1=commons}}\n\n== {{Original upload log}} ==\n{{Original file page|en.wikipedia|FleetwoodLeyland.jpg}}\n{| class=\"wikitable\"\n! {{int:filehist-datetime}} !! {{int:filehist-dimensions}} !! {{int:filehist-user}} !! {{int:filehist-comment}}\n|-\n| 2007-12-17 07:14:40 || 252 × 472 || [[w:User:Phanto282|Phanto282]] || ''<nowiki>Pic fromt the 1936-37 cricket series between Australia and England. Image is pre-1955 and therefore in the Public Domain. {{Template:PD-Australia}}</nowiki>''\n|}",
+            "enwp_title": "File:FleetwoodLeyland.jpg"
         },
         {
-            "File:DFO dog stare.JPG": {
-                "com_title": "File:DFO dog stare.JPG",
-                "desc": "== {{int:filedesc}} ==\n{{Information\n|description=for use in my user space.\n|date=\n|source=\n|author=\n|permission=\n|other versions=\n}}\n\n== {{int:license-header}} ==\n{{Cc-by-sa-4.0}}\n{{Own}}\n\n== {{Original upload log}} ==\n{{Original file page|en.wikipedia|DFO dog stare.JPG}}\n{| class=\"wikitable\"\n! {{int:filehist-datetime}} !! {{int:filehist-dimensions}} !! {{int:filehist-user}} !! {{int:filehist-comment}}\n|-\n| 2020-11-01 18:04:48 || 4000 × 6000 || [[w:User:Deepfriedokra|Deepfriedokra]] || ''<nowiki>{{own work}} for use in my user space.</nowiki>''\n|}"
-            }
+            "com_title": "File:DFO dog stare.JPG",
+            "desc": "== {{int:filedesc}} ==\n{{Information\n|description=for use in my user space.\n|date=\n|source=\n|author=\n|permission=\n|other versions=\n}}\n\n== {{int:license-header}} ==\n{{Cc-by-sa-4.0}}\n{{Own}}\n\n== {{Original upload log}} ==\n{{Original file page|en.wikipedia|DFO dog stare.JPG}}\n{| class=\"wikitable\"\n! {{int:filehist-datetime}} !! {{int:filehist-dimensions}} !! {{int:filehist-user}} !! {{int:filehist-comment}}\n|-\n| 2020-11-01 18:04:48 || 4000 × 6000 || [[w:User:Deepfriedokra|Deepfriedokra]] || ''<nowiki>{{own work}} for use in my user space.</nowiki>''\n|}",
+            "enwp_title": "File:DFO dog stare.JPG"
         }
     ]
 }

@@ -173,7 +173,7 @@ def generate_text_multi(titles: list[str], force: bool) -> dict:
     out = []
     for title in l:
         if (desc := _generate_text(title, "Category:Self-published work" in cat_map[title], image_infos[title])) and (com_title := title_map[title]):
-            out.append({title: {"com_title": com_title, "desc": desc}})
+            out.append({"enwp_title": title, "com_title": com_title, "desc": desc})
         else:
             log.warn("Could not generate title or wikitext for '%s', skipipng...", title)
             fails.append(title)

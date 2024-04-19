@@ -2,7 +2,7 @@
 
 import logging
 
-from flask import Flask, redirect, request
+from flask import Flask, request
 from rich.logging import RichHandler
 
 from .core import generate_text_multi
@@ -18,7 +18,7 @@ def generate():
 
 @app.route('/')
 def index():
-    return redirect("https://github.com/fastily/mtc-api")
+    return {"docs": "https://github.com/fastily/mtc-api"}
 
 
 if __name__ == "__main__":
