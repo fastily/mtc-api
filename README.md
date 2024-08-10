@@ -1,5 +1,5 @@
 # mtc-api
-[![Python 3.11+](https://upload.wikimedia.org/wikipedia/commons/6/62/Blue_Python_3.11%2B_Shield_Badge.svg)](https://www.python.org)
+[![Python 3.12+](https://upload.wikimedia.org/wikipedia/commons/5/50/Blue_Python_3.12%2B_Shield_Badge.svg)](https://www.python.org)
 [![MediaWiki 1.35+](https://upload.wikimedia.org/wikipedia/commons/b/b3/Blue_MediaWiki_1.35%2B_Shield_Badge.svg)](https://www.mediawiki.org/wiki/MediaWiki)
 [![License: GPL v3](https://upload.wikimedia.org/wikipedia/commons/8/86/GPL_v3_Blue_Badge.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
@@ -88,5 +88,5 @@ Takes a list of titles of files on enwp and attempts to generate file descriptio
 python -m mtc_api
 
 # use gunicorn to run in prod
-gunicorn -w 2 -b "0.0.0.0:8000" mtc_api.__main__:app
+gunicorn -w 2 -k uvicorn.workers.UvicornWorker -b "0.0.0.0:8000" mtc_api.__main__:app
 ```

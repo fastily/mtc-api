@@ -1,31 +1,40 @@
 """mtc-api entry point"""
 
-import logging
+from contextlib import suppress
+from typing import Any
 
-from flask import Flask, request
-from rich.logging import RichHandler
+import uvicorn
+
+from fastapi import FastAPI, HTTPException, Request
 
 from .core import generate_text_multi
 
 
-app = Flask(__name__)
+app = FastAPI(title="mtc-api", docs_url=None, redoc_url=None)
 
 
-@app.route('/generate', methods=["POST"])
-def generate():
-    return generate_text_multi(titles, request.json.get("force", False)) if (titles := request.json.get("titles")) and len(titles) <= 25 else ({"error": "empty, malformed, or overly large request (max is 25 titles)"}, 400)
-
-
-@app.route('/')
-def index():
+@app.get("/")
+async def show_index() -> dict[str, str]:
+    """Shows the web UI"""
     return {"docs": "https://github.com/fastily/mtc-api"}
 
 
-if __name__ == "__main__":
-    handler = RichHandler(rich_tracebacks=True)
-    for s in ("pwiki", "fastilybot", "mtc_api"):
-        lg = logging.getLogger(s)
-        lg.addHandler(handler)
-        lg.setLevel("DEBUG")
+@app.post('/generate')
+async def generate(request: Request) -> dict[str, list[Any]]:
+    """Endpoint which generates commons descriptions for the given titles
 
-    app.run(port=8000, debug=True)
+    Args:
+        request (Request): The FastAPI request
+
+    Returns:
+        dict[str, Any]: json where each key is the original name of the file and the value contains a dict with the new title and new description.
+    """
+    with suppress(Exception):
+        if (titles := (body := await request.json()).get("titles")) and len(titles) <= 25:
+            return generate_text_multi(titles, body.get("force", False))
+
+    raise HTTPException(400, "empty, malformed, or overly large request (max is 25 titles)")
+
+
+if __name__ == '__main__':
+    uvicorn.run("mtc_api.__main__:app", reload=True)

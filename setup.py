@@ -17,13 +17,13 @@ setuptools.setup(
     },
     include_package_data=True,
     packages=setuptools.find_packages(include=["mtc_api"]),
-    install_requires=['fastilybot', 'Flask', 'gunicorn'],
+    install_requires=['fastilybot', 'fastapi[all]', 'gunicorn'],
     classifiers=[
         "Natural Language :: English",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.11',
+    python_requires='>=3.12',
 )
